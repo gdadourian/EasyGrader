@@ -2,12 +2,14 @@
 
 - Student
   - id
-  - name
+  - first_name
+  - last_name
 - Grade
   - id
   - student_id
   - assignment
-  - score
+  - score_received
+  - score_possible
 
 # API
 
@@ -25,21 +27,6 @@
 ]
 ```
 
-- GET /students/<id>
-```
-{
-    id: 1,
-    name: 'John Smith',
-    grades: [
-        {
-            assignment: 'Hw 1',
-            score: '9/10'
-        },
-        ...
-    ]
-}
-```
-
 - POST /students - requires name
 ```
 {
@@ -49,6 +36,18 @@
 ```
 
 ## Grades
+
+- GET /grades
+```
+[
+    {
+        student_id: 1,
+        assignment: 'Hw 1',
+        score: '9/10'
+    },
+    ...
+]
+```
 
 - POST /grades - requires student_id, assignment, score
 ```

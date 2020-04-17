@@ -1,12 +1,18 @@
 import React from 'react';
+import { Students } from './components/Students'
+import { AddStudent } from './components/AddStudent'
+import { AddGrade } from './components/AddGrade'
 import './App.css';
-import {Students} from './components/Students'
 
 function App() {
-  
+
   return (
     <div className="App">
-      <Students />
+      <header className='App-header'>
+        <Students />
+        <AddStudent />
+        <AddGrade />
+      </header>
     </div>
   );
 }

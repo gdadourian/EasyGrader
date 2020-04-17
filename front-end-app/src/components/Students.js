@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import './Students.css';
 
 export const Students = () => {
     const [students, setStudents]=useState([])
@@ -19,7 +20,8 @@ export const Students = () => {
     }
     return (
         <div>
-            <select>
+            <label for='students'>Select Student:</label>
+            <select id='students'>
                 {students.map(student => 
                     <option id={student.id} key={student.id}>{student.first_name} {student.last_name}</option>
                 )}

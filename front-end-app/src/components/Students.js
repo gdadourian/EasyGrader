@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import './Students.css';
 
-export const Students = () => {
+export const Students = ({ setSelectedStudent }) => {
     const [students, setStudents]=useState([])
     
     useEffect(()=>{
@@ -21,9 +21,11 @@ export const Students = () => {
     return (
         <div>
             <label for='students'>Select Student:</label>
-            <select id='students'>
+            <select id='students' onChange={(event) => setSelectedStudent(event.target.value)}>
                 {students.map(student => 
-                    <option id={student.id} key={student.id}>{student.first_name} {student.last_name}</option>
+                    <option value={student.id} key={student.id}>
+                        {student.first_name} {student.last_name}
+                    </option>
                 )}
             </select>
         </div>

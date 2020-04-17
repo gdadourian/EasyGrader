@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import './Grades.css';
 
-export const Grades = () => {
+export const Grades = ({ selectedStudent }) => {
     const [grades, setGrades]=useState([])
     
     useEffect(()=>{
@@ -18,6 +18,9 @@ export const Grades = () => {
     if (!grades.length) {
         return (<div>Grades loading...</div>)
     }
+    
+    const selectedGrades = grades.filter(grade => grade.student_id == selectedStudent)
+    
     return (
         <div>
             <table>
@@ -29,7 +32,7 @@ export const Grades = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {grades.map(grade =>
+                    {selectedGrades.map(grade =>
                         <tr key={grade.id}>
                             <td>{grade.assignment}</td>
                             <td className='grade'>{grade.score_received}</td>

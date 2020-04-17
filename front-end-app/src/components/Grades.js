@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import './Grades.css';
 
 export const Grades = () => {
     const [grades, setGrades]=useState([])
@@ -31,8 +32,8 @@ export const Grades = () => {
                     {grades.map(grade =>
                         <tr key={grade.id}>
                             <td>{grade.assignment}</td>
-                            <td>{grade.score_received}</td>
-                            <td>{grade.score_possible}</td>
+                            <td className='grade'>{grade.score_received}</td>
+                            <td className='grade'>{grade.score_possible}</td>
                         </tr>
                     )}
                 </tbody>

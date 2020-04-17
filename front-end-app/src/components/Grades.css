@@ -1,0 +1,15 @@
+table {
+    width: 100%;
+}
+th {
+    border-bottom: 2px solid maroon;
+    padding: 1em;
+}
+td {
+    border-top: 1px solid maroon;
+    color: #333;
+    padding: 1em;
+}
+td.grade {
+    text-align: center;
+}

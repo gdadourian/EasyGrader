@@ -1,0 +1,8 @@
+button {
+    background-color: maroon;
+    color: lightgray;
+    font-size: 1em;
+    font-weight: bold;
+    margin: auto 1em;
+    padding: .5em 1em;
+}

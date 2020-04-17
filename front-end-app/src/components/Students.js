@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-const MOCK_STUDENTS=[
-    {id: 1, first_name: 'John', last_name: 'Smith'}, 
-    {id:2, first_name: 'Mary', last_name: 'Peters'}
-]
 export const Students = () => {
     const [students, setStudents]=useState([])
     
@@ -13,11 +9,10 @@ export const Students = () => {
             res.json().then(res => setStudents(res))
         }
         if (students.length === 0) {
-            // fetchStudents()
-            setStudents(MOCK_STUDENTS)
+            fetchStudents()
         }
-            
-    })
+        console.log('fetch students effect')
+    }, [students])
   
     if (!students.length) {
         return (<div>Students loading...</div>)
@@ -26,7 +21,7 @@ export const Students = () => {
         <div>
             <select>
                 {students.map(student => 
-                    <option id={student.id}>{student.first_name} {student.last_name}</option>
+                    <option id={student.id} key={student.id}>{student.first_name} {student.last_name}</option>
                 )}
             </select>
         </div>

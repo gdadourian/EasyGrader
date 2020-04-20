@@ -1,0 +1,11 @@
+select {
+    appearance: none;
+    color: maroon;
+    font-size: 1em;
+    margin: auto 1em;
+    padding: .5em 1em;
+}
+label {
+    color: maroon;
+    font-weight: bold;
+}

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Average } from './Average'
 import './Grades.css';
 
 export const Grades = ({ selectedStudent }) => {
@@ -21,6 +22,7 @@ export const Grades = ({ selectedStudent }) => {
     
     return (
         <div>
+            <Average grades={selectedGrades} />
             <table>
                 <thead>
                     <tr>

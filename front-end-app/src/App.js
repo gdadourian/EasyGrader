@@ -3,7 +3,6 @@ import { Students } from './components/Students'
 import { AddStudent } from './components/AddStudent'
 import { AddGrade } from './components/AddGrade'
 import { Grades } from './components/Grades'
-import { Average } from './components/Average'
 import './App.css';
 
 function App() {
@@ -16,7 +15,6 @@ function App() {
         <AddStudent />
         <AddGrade />
       </header>
-      <Average />
       <Grades selectedStudent={selectedStudent} />
     </div>
   );

@@ -1,8 +1,15 @@
 import React from 'react'
 import './Average.css';
 
-export const Average = () =>
-    <p className='average'>
-        <span>Average:</span>
-        95%
-    </p>
+export const Average = ({ grades }) => {
+    let gradeSum = 0;
+    grades.forEach(grade => gradeSum += grade.score_received)
+    const gradeAverage = gradeSum / grades.length
+    
+    return (
+        <p className='average'>
+            <span>Average:</span>
+            {gradeAverage}%
+        </p>
+    )
+}

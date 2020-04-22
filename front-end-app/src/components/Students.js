@@ -6,14 +6,14 @@ export const Students = ({ setSelectedStudent }) => {
     
     useEffect(()=>{
         async function fetchStudents() {
-            const res = await fetch('https://my.api.mockaroo.com/students?key=f1d20b10');
+            const res = await fetch('/api/students');
             res.json().then(res => setStudents(res))
         }
-        if (students.length === 0) {
-            fetchStudents()
-        }
+        
+        fetchStudents()
+        
         console.log('fetch students effect')
-    }, [students])
+    }, [])
   
     if (!students.length) {
         return (<div>Students loading...</div>)

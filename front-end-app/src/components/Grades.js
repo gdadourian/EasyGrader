@@ -6,14 +6,12 @@ export const Grades = ({ selectedStudent }) => {
     
     useEffect(()=>{
         async function fetchGrades() {
-            const res = await fetch('https://my.api.mockaroo.com/grades?key=f1d20b10');
+            const res = await fetch('/api/grades');
             res.json().then(res => setGrades(res))
         }
-        if (grades.length === 0) {
-            fetchGrades()
-        }
+        fetchGrades()
         console.log('fetch grades effect')
-    }, [grades])
+    }, [])
   
     if (!grades.length) {
         return (<div>Grades loading...</div>)

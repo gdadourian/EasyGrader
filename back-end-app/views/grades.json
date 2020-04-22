@@ -1,12 +1,14 @@
 [
-    {"id":1,"student_id":1,"assignment":"vehicula condimentum","score_received":82,"score_possible":6},
-    {"id":2,"student_id":2,"assignment":"urna","score_received":95,"score_possible":48},
-    {"id":3,"student_id":3,"assignment":"eget massa","score_received":32,"score_possible":50},
-    {"id":4,"student_id":4,"assignment":"magnis dis","score_received":69,"score_possible":36},
-    {"id":5,"student_id":5,"assignment":"iaculis congue vivamus","score_received":91,"score_possible":89},
-    {"id":6,"student_id":6,"assignment":"phasellus id","score_received":78,"score_possible":61},
-    {"id":7,"student_id":7,"assignment":"aliquet massa","score_received":25,"score_possible":85},
-    {"id":8,"student_id":8,"assignment":"luctus et","score_received":9,"score_possible":27},
-    {"id":9,"student_id":9,"assignment":"maecenas pulvinar","score_received":99,"score_possible":30},
-    {"id":10,"student_id":10,"assignment":"felis fusce","score_received":68,"score_possible":3}
+    {"id":1,"student_id":1,"assignment":"vehicula condimentum","score_received":82,"score_possible":100},
+    {"id":2,"student_id":2,"assignment":"urna","score_received":95,"score_possible":100},
+    {"id":3,"student_id":3,"assignment":"eget massa","score_received":32,"score_possible":100},
+    {"id":4,"student_id":4,"assignment":"magnis dis","score_received":69,"score_possible":100},
+    {"id":5,"student_id":5,"assignment":"iaculis congue vivamus","score_received":91,"score_possible":100},
+    {"id":6,"student_id":6,"assignment":"phasellus id","score_received":78,"score_possible":100},
+    {"id":7,"student_id":7,"assignment":"aliquet massa","score_received":25,"score_possible":100},
+    {"id":8,"student_id":8,"assignment":"luctus et","score_received":9,"score_possible":100},
+    {"id":9,"student_id":9,"assignment":"maecenas pulvinar","score_received":99,"score_possible":100},
+    {"id":10,"student_id":10,"assignment":"felis fusce","score_received":68,"score_possible":100},
+    {"id":11,"student_id":1,"assignment":"felis fusce 2","score_received":68,"score_possible":100}
+
 ]

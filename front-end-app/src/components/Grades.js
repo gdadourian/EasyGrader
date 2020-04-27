@@ -3,23 +3,31 @@ import { Average } from './Average'
 import './Grades.css';
 
 export const Grades = ({ selectedStudent }) => {
+    const [loading, setLoading]=useState(true)
     const [grades, setGrades]=useState([])
     
     useEffect(()=>{
         async function fetchGrades() {
             const res = await fetch('/api/grades');
-            res.json().then(res => setGrades(res))
+            res.json().then(res => {
+                setGrades(res)
+                setLoading(false)
+            })
         }
         fetchGrades()
         console.log('fetch grades effect')
     }, [])
   
-    if (!grades.length) {
+    if (loading) {
         return (<div>Grades loading...</div>)
     }
     
     const selectedGrades = grades.filter(grade => grade.student_id == selectedStudent)
     
+    if (!selectedGrades.length) {
+        return (<div style={{'padding': '1em'}}>No grades.</div>)
+    }
+
     return (
         <div>
             <Average grades={selectedGrades} />

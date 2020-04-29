@@ -14,7 +14,7 @@ import { GradeForm } from './components/GradeForm'
 import './App.css';
 
 function App() {
-  const [ selectedStudent, setSelectedStudent ] = useState(1)
+  const [ selectedStudent, setSelectedStudent ] = useState()
 
   return (
     <div className="App">

@@ -43,7 +43,7 @@ function App() {
             </Route>
             <Route path="/">
               <header className='App-header'>
-                <Students setSelectedStudent={setSelectedStudent} />
+                <Students setSelectedStudent={setSelectedStudent} selectedStudent={selectedStudent} />
               </header>
               <Grades selectedStudent={selectedStudent} />
             </Route>

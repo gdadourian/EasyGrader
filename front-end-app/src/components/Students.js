@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import './Students.css';
 
-export const Students = ({ setSelectedStudent }) => {
+export const Students = ({ setSelectedStudent, selectedStudent }) => {
     const [loading, setLoading]=useState(true)
     const [students, setStudents]=useState([])
     
@@ -29,8 +29,8 @@ export const Students = ({ setSelectedStudent }) => {
     return (
         <div>
             <label htmlFor='students'>Student:</label>
-            <select id='students' onChange={(event) => setSelectedStudent(event.target.value)}>
-                <option>Select Student</option>
+            <select id='students' onChange={(event) => setSelectedStudent(event.target.value)} value={selectedStudent}>
+                <option value=''>Select Student</option>
                 {students.map(student => 
                     <option value={student._id} key={student._id}>
                         {student.first_name} {student.last_name}

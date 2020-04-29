@@ -9,6 +9,7 @@ import { Students } from './components/Students'
 import { AddStudent } from './components/AddStudent'
 import { AddGrade } from './components/AddGrade'
 import { Grades } from './components/Grades'
+import { StudentForm } from './components/StudentForm'
 import './App.css';
 
 function App() {
@@ -34,7 +35,7 @@ function App() {
 
           <Switch>
             <Route path="/students">
-              <div>Add student form</div>
+              <StudentForm />
             </Route>
             <Route path="/grades">
               <div>Add grade form</div>

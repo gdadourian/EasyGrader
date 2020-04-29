@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export const GradeForm = ({ selectedStudent }) => {
-    const handleSubmit = (event) => {
+    const [status, setStatus] = useState('')
+    const [errors, setErrors] = useState([])
+
+    const handleSubmit = async (event) => {
         event.preventDefault()
 
         const data = {
@@ -10,12 +13,25 @@ export const GradeForm = ({ selectedStudent }) => {
             score_received: event.target.score_received.value,
             score_possible: event.target.score_possible.value,
         }
-        fetch('/api/grades', {
+        const res = await fetch('/api/grades', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data),
         })
+        res.json().then(res => {
+            if (res.errors) {
+                setErrors(res.errors.map(err => err.msg))
+                setStatus('Grade was not created.')
+            } else {
+                setErrors([])
+                setStatus('Grade created successfully.')
+            }
+        })
     }
+
+    const statusMsgColor = status.includes('success') ? 'green' : 'red'
+    const statusStyles = { color: statusMsgColor, fontWeight: 'bold' }
+
     return (
         <form onSubmit={handleSubmit}>
             <div>Student: {selectedStudent}</div>
@@ -33,6 +49,12 @@ export const GradeForm = ({ selectedStudent }) => {
                 <label>Out of:</label>
                 <input type='number' name='score_possible' required />
             </div>
+
+            <p style={statusStyles}>{status}</p>
+
+            {errors.map(err =>
+                <p style={{color:'red'}} key={err}>{err}</p>
+            )}
 
             <button>Create grade</button>
         </form>

@@ -8,7 +8,7 @@ export const StudentForm = () => {
             first_name: event.target.first_name.value,
             last_name: event.target.last_name.value,
         }
-        fetch('/api/users', {
+        fetch('/api/students', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data),

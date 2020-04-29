@@ -10,8 +10,18 @@ router.get('/students', function(req, res, next) {
     if (err) { return next(err) }
     res.json(list_students);
   })
-  
 });
+
+router.post('/students', function(req, res, next) {
+  const student = new Student({
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
+  })
+  student.save(function(err) {
+    if (err) { return next(err) }
+    res.json(student)
+  })
+})
 
 /* GET grades listing. */
 router.get('/grades', function(req, res, next) {

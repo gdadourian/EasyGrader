@@ -22,7 +22,7 @@ export const Grades = ({ selectedStudent }) => {
         return (<div>Grades loading...</div>)
     }
     
-    const selectedGrades = grades.filter(grade => grade.student_id == selectedStudent)
+    const selectedGrades = grades.filter(grade => grade.student == selectedStudent)
     
     if (!selectedGrades.length) {
         return (<div style={{'padding': '1em'}}>No grades.</div>)
@@ -41,7 +41,7 @@ export const Grades = ({ selectedStudent }) => {
                 </thead>
                 <tbody>
                     {selectedGrades.map(grade =>
-                        <tr key={grade.id}>
+                        <tr key={grade._id}>
                             <td>{grade.assignment}</td>
                             <td className='grade'>{grade.score_received}</td>
                             <td className='grade'>{grade.score_possible}</td>

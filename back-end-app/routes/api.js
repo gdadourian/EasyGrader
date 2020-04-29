@@ -43,4 +43,32 @@ router.get('/grades', function(req, res, next) {
   })
 });
 
+router.post('/grades', [
+  check('student').notEmpty().trim().escape()
+    .isAlphanumeric().withMessage('Student has non-alphanumeric characters.'),
+  check('assignment').notEmpty().trim().escape()
+    .isAlphanumeric().withMessage('Assignment has non-alphanumeric characters.'),
+  check('score_received').notEmpty().trim().escape()
+    .isInt().withMessage('Score must be a whole number.'),
+  check('score_possible').notEmpty().trim().escape()
+    .isInt().withMessage('Possible score must be a whole number.'),
+], function(req, res, next) {
+  
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(422).json({ errors: errors.array() });
+  }
+
+  const grade = new Grade({
+    student: req.body.student,
+    assignment: req.body.assignment,
+    score_received: req.body.score_received,
+    score_possible: req.body.score_possible,
+  })
+  grade.save(function(err) {
+    if (err) { return next(err) }
+    res.json(grade)
+  })
+})
+
 module.exports = router;

@@ -28,8 +28,9 @@ export const Students = ({ setSelectedStudent }) => {
     }
     return (
         <div>
-            <label htmlFor='students'>Select Student:</label>
+            <label htmlFor='students'>Student:</label>
             <select id='students' onChange={(event) => setSelectedStudent(event.target.value)}>
+                <option>Select Student</option>
                 {students.map(student => 
                     <option value={student._id} key={student._id}>
                         {student.first_name} {student.last_name}

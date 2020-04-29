@@ -31,7 +31,7 @@ export const Students = ({ setSelectedStudent }) => {
             <label htmlFor='students'>Select Student:</label>
             <select id='students' onChange={(event) => setSelectedStudent(event.target.value)}>
                 {students.map(student => 
-                    <option value={student.id} key={student.id}>
+                    <option value={student._id} key={student._id}>
                         {student.first_name} {student.last_name}
                     </option>
                 )}

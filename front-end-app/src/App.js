@@ -10,6 +10,7 @@ import { AddStudent } from './components/AddStudent'
 import { AddGrade } from './components/AddGrade'
 import { Grades } from './components/Grades'
 import { StudentForm } from './components/StudentForm'
+import { GradeForm } from './components/GradeForm'
 import './App.css';
 
 function App() {
@@ -38,7 +39,7 @@ function App() {
               <StudentForm />
             </Route>
             <Route path="/grades">
-              <div>Add grade form</div>
+              <GradeForm selectedStudent={selectedStudent} />
             </Route>
             <Route path="/">
               <header className='App-header'>

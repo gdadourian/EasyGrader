@@ -1,8 +1,8 @@
 language: node_js
 node_js:
-- node
+  - node
 cache: npm
 install:
   - cd back-end-app && npm install
 script:
-  - cd back-end-app && npm test
+  - npm test

@@ -13,7 +13,7 @@ describe("Test the root path", () => {
   });
 });
 
-describe('Test student api', () => {
+describe('Test students api', () => {
     test('GET /students should return 200', async () => {
         const response = await request(app).get('/api/students');
         expect(response.statusCode).toBe(200);

@@ -4,6 +4,11 @@ import './Students.css';
 export const Students = ({ setSelectedStudent, selectedStudent }) => {
     const [loading, setLoading]=useState(true)
     const [students, setStudents]=useState([])
+
+    const handleSelectStudent = event => {
+        const selectedStudent = students.find(student => student._id == event.target.value)
+        setSelectedStudent(selectedStudent)
+    }
     
     useEffect(()=>{
         async function fetchStudents() {
@@ -29,7 +34,7 @@ export const Students = ({ setSelectedStudent, selectedStudent }) => {
     return (
         <div>
             <label htmlFor='students'>Student:</label>
-            <select id='students' onChange={(event) => setSelectedStudent(event.target.value)} value={selectedStudent}>
+            <select id='students' onChange={handleSelectStudent} value={selectedStudent._id}>
                 <option value=''>Select Student</option>
                 {students.map(student => 
                     <option value={student._id} key={student._id}>

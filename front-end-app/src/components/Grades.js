@@ -22,7 +22,7 @@ export const Grades = ({ selectedStudent }) => {
         return (<div>Grades loading...</div>)
     }
     
-    const selectedGrades = grades.filter(grade => grade.student == selectedStudent)
+    const selectedGrades = grades.filter(grade => grade.student == selectedStudent._id)
     
     if (!selectedGrades.length) {
         return (<div style={{'padding': '1em'}}>No grades.</div>)

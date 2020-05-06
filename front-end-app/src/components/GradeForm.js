@@ -34,7 +34,7 @@ export const GradeForm = ({ selectedStudent }) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <div>Student: {selectedStudent}</div>
+            <p><b>Student:</b> {selectedStudent.first_name} {selectedStudent.last_name}</p>
             <div>
                 <label>Assignment:</label>
                 <input type='text' name='assignment' required />

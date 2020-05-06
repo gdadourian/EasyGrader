@@ -13,7 +13,7 @@ import './App.css';
 import './components/Button.css'
 
 function App() {
-  const [ selectedStudent, setSelectedStudent ] = useState()
+  const [ selectedStudent, setSelectedStudent ] = useState({})
 
   return (
     <div className="App">
@@ -28,7 +28,7 @@ function App() {
               <li>
                 <Link to="/students">Add Student</Link>
               </li>
-              {selectedStudent && <li>
+              {selectedStudent._id && <li>
                 <Link to="/grades">Add Grade</Link>
               </li>}
             </ul>

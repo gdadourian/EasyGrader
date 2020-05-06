@@ -13,7 +13,8 @@ var app = express();
 
 // setup mongoose connection
 var mongoose = require('mongoose');
-mongoose.connect(process.env.MONGODB, {useNewUrlParser: true});
+const mongoUrl = process.env.NODE_ENV === 'test' ? process.env.MONGO_URL : process.env.MONGODB
+mongoose.connect(mongoUrl, {useNewUrlParser: true});
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 

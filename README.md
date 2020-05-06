@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/gdadourian/EasyGrader.svg?branch=master)](https://travis-ci.com/gdadourian/EasyGrader)
+
 # Data model
 
 - Student

@@ -1,6 +1,10 @@
 const request = require("supertest");
 const app = require("./app");
-const { MongoClient } = require('mongodb');
+var mongoose = require('mongoose');
+
+afterAll( async () =>{
+  await mongoose.connection.close()
+})
 
 describe("Test the root path", () => {
   test("It should responsd to the GET method", async () => {
@@ -9,22 +13,7 @@ describe("Test the root path", () => {
   });
 });
 
-describe('Test api', () => {
-    let connection;
-    let db;
-
-    beforeAll(async () => {
-      connection = await MongoClient.connect(process.env.MONGODB, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-      });
-      db = await connection.db();
-    });
-
-    afterAll(async () => {
-      await connection.close();
-    });
-
+describe('Test student api', () => {
     test('GET /students should return 200', async () => {
         const response = await request(app).get('/api/students');
         expect(response.statusCode).toBe(200);
@@ -39,7 +28,9 @@ describe('Test api', () => {
             }))
         )
     })
+})
 
+describe('Test grades api', () => {
     test('GET /grades should return 200', async () => {
         const response = await request(app).get('/api/grades');
         expect(response.statusCode).toBe(200);
